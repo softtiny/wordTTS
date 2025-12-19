@@ -18,13 +18,15 @@ class StopWatch(HorizontalGroup):
 class StopwatchApp(App):
     """A Textual app to manage stopwatches."""
 
+    CSS_PATH = "stopwatch02.tcss"
     BINDINGS = [("d", "toggle_dark", "Toggle dark mode")]
 
     def compose(self) -> ComposeResult:
         """Create child widgets for the app."""
         yield Header()
         yield Footer()
-        yield VerticalScroll(StopWatch(),StopWatch())
+        linea=StopWatch()
+        yield VerticalScroll(linea,StopWatch())
 
     def action_toggle_dark(self) -> None:
         """An action to toggle dark mode."""
