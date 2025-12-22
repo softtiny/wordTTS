@@ -5,3 +5,5 @@ default:
     just --list
 srt2txt:
     python -c "from srt_to_txt import srt2txt;srt2txt('.tmp/Shape of You.srt')"
+txt2lines:
+    python -c "from txt_to_lines import txt2lines;txt2lines('.tmp/3.txt')"
