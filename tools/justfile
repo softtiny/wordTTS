@@ -1,0 +1,7 @@
+#!/usr/bin/env just --justfile
+set dotenv-load
+set dotenv-filename := ".env.local"
+default:
+    just --list
+srt2txt:
+    python -c "from srt_to_txt import srt2txt;srt2txt('.tmp/Shape of You.srt')"

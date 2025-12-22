@@ -147,6 +147,8 @@ log.txt
 Pipfile.lock
 env3.*
 env
+.env
+.env*
 docs_build
 site_build
 venv
@@ -157,3 +159,4 @@ archive.zip
 *~
 .*.sw?
 .cache
+.tmp
