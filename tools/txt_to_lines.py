@@ -1,6 +1,6 @@
 import os
 
-TMPWORDS_TMP = [[item,item+',',item+'.'] for item in ['um','uh','mm','mm-hmm','uh-huh']]
+TMPWORDS_TMP = [[item,item+',',item+'.'] for item in ['um','uh','mm','mm-hmm','uh-huh','oh','ooh']]
 TMPWORDS = [arr for sublist in TMPWORDS_TMP for arr in sublist]
 
 GAPS = [
@@ -40,5 +40,5 @@ def txt2lines(source):
             else:
                 word += code
             idx+=1
-        txt_file.write(line+"\n")
+        txt_file.write(line+word+"\n")
 
