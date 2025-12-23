@@ -1,9 +1,7 @@
 import os
 
-TMPWORDS = [
-        'um',
-        'uh',
-        ]
+TMPWORDS_TMP = [[item,item+',',item+'.'] for item in ['um','uh','mm','mm-hmm','uh-huh']]
+TMPWORDS = [arr for sublist in TMPWORDS_TMP for arr in sublist]
 
 GAPS = [
         " ",
@@ -28,7 +26,7 @@ def txt2lines(source):
         while idx < length:
             code = real_content[idx]
             if code in GAPS:
-                if word in TMPWORDS:
+                if word.lower() in TMPWORDS:
                     tmp_file.write(word+"\n")
                 else:
                     line += (word + " ")
