@@ -1,6 +1,6 @@
 import os
 
-TMPWORDS_TMP = [[item,item+',',item+'.'] for item in ['ah','aw','mmm','hmm','um','uh','mm','mm-hmm','uh-huh','oh','ooh']]
+TMPWORDS_TMP = [[item,item+',',item+'.'] for item in ['ah','aw','mmm','hmm','um','uh','mm','mm-hmm','uh-huh','oh','ooh','uh-uh','shhh']]
 TMPWORDS = [arr for sublist in TMPWORDS_TMP for arr in sublist]
 
 GAPS = [
