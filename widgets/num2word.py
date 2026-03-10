@@ -24,7 +24,7 @@ def number_to_words(n: int) -> str:
         if h > 0: words += UNITS[h] + " hundred" + (" " if r > 0 else "")
         if r >= 20:
             t, u = divmod(r, 10)
-            words += TENS[t] + ("-" + UNITS[u] if u > 0 else "")
+            words += TENS[t] + (" " + UNITS[u] if u > 0 else "")
         elif r > 9: words += TEENS[r - 10]
         elif r > 0: words += UNITS[r]
         return words.strip()
@@ -165,10 +165,10 @@ class FileProcessorScreen(Screen):
 
     def action_save_file(self):
         self.apply_conversions()
-        output = Path(f"processed_{self.filename}")
+        output = Path(f".cache/processed_{self.filename}")
         output.write_text("\n".join(self.processed_lines), encoding="utf-8")
         
-        log_path = Path("process_log.txt")
+        log_path = Path(".cache/process_log.txt")
         log_path.write_text("\n".join(self.log_entries), encoding="utf-8")
         
         self.notify(f"Saved to {output} & log created!")
@@ -191,18 +191,18 @@ class FileSelectorScreen(Screen):
 class ManualProcessorApp(App):
     CSS = """
     #processor-wrapper { padding: 1; }
-    #file-title { text-align: center; background: $accent; color: white; margin-bottom: 1; }
+    #file-title { text-align: center; background: $accent; color: white; }
     .section-title { color: $secondary; margin-top: 1; }
-    .display-box { background: $surface; border: solid $primary; padding: 1; min-height: 2; margin-bottom: 1; }
+    .display-box { background: $surface; border: solid $primary; min-height: 2; margin-bottom: 1; }
     
-    #main-area { height: 70%; }
-    #left-pane { width: 60%; padding: 1; }
-    #right-pane { width: 40%; border-left: solid $primary; padding: 1; }
+    #main-area { height: 80%; }
+    #left-pane { width: 60%;  }
+    #right-pane { width: 40%; border-left: solid $primary; }
     
-    .match-item { background: $boost; border: solid $primary-lighten-2; margin-bottom: 1; padding: 1; }
+    .match-item { background: $boost; border: solid $primary-lighten-2;  }
     RadioSet { background: transparent; }
     
-    #action-bar { height: 3; align: center middle; margin-top: 1; }
+    #action-bar { height: 3; align: center middle; }
     Button { margin: 0 1; }
     """
 
