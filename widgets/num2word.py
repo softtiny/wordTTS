@@ -86,11 +86,15 @@ class FileProcessorScreen(Screen):
     def on_mount(self) -> None:
         self.load_line()
 
+    def on_radio_set_changed(self, event: RadioSet.Changed) -> None:
+        self.query_one("#processed-preview", Static).update("hahah")
+
     def load_line(self) -> None:
         """加载当前行并扫描数字"""
         line = self.lines[self.current_idx]
         self.query_one("#current-line-text", Static).update(line)
         self.query_one("#processed-preview", Static).update(self.processed_lines[self.current_idx])
+        #self.query_one("#processed-preview", Static).update("dsfds")
         
         match_list = self.query_one("#match-list")
         # 清空旧组件
