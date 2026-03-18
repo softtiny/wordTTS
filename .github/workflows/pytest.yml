@@ -11,5 +11,5 @@ jobs:
         with:
           python-version: '3.14'
       - run: pip install uv
-      - run: uv pip install inflect pytest pytest-asyncio textual-dev
+      - run: uv --system pip install inflect pytest pytest-asyncio textual-dev
       - run: pytest
