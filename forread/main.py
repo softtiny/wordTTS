@@ -16,16 +16,16 @@ class FileSelectorScreen(Screen):
 class ManualProcessorApp(App):
     # 将 CSS 抽离或放在此处
     CSS = """
-    #processor-wrapper { padding: 1; height: 100%; }
-    #file-title { text-align: center; background: $accent; color: white; height: 3; content-align: center middle; }
-    .section-title { color: $secondary; margin: 1 0; }
-    .display-box { background: $surface; border: solid $primary; padding: 1; min-height: 5; margin-bottom: 1; }
+    #processor-wrapper { height: 100%; }
+    #file-title { text-align: center; background: $accent; color: white; height: 1; content-align: center middle; }
+    .section-title { color: $secondary; }
+    .display-box { background: $surface; border: solid $primary; }
     #main-area { height: 75%; }
     #left-pane { width: 55%; padding-right: 1; border-right: tall $primary; }
     #right-pane { width: 45%; padding-left: 1; }
-    .match-item { background: $boost; border: solid $primary-lighten-2; margin-bottom: 1; padding: 1; height: auto; }
+    .match-item { background: $boost; border: solid $primary-lighten-2; height: auto; }
     #action-bar { height: 5; align: center middle; border-top: heavy $primary; }
-    Button { margin: 0 1; }
+    Button { height: 3;padding:0;margin:0; }
     """
 
     def compose(self) -> ComposeResult:

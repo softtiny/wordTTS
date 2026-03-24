@@ -34,9 +34,9 @@ class FileProcessorScreen(Screen):
                     yield Static("", id="current-line-text", classes="display-box")
                     yield Label("Final Processed Preview:", classes="section-title")
                     yield Static("", id="processed-preview", classes="display-box")
-                with VerticalScroll(id="right-pane"):
+                with Vertical(id="right-pane"):
                     yield Label("Found Numbers (Manual Mode):", classes="section-title")
-                    yield Vertical(id="match-list")
+                    yield VerticalScroll(id="match-list")
             with Horizontal(id="action-bar"):
                 yield Button("Previous", id="btn-prev")
                 yield Button("Next / Confirm", id="btn-next", variant="primary")
