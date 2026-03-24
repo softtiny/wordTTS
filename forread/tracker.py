@@ -132,13 +132,7 @@ class SpanRecord:
         """快捷方法：提取所有整数和小数。"""
         return self.extract_pattern(r"-?\d+(?:\.\d+)?", label="数字")
 
-    def extract_dates(self) -> "SpanRecord":
-        """快捷方法：提取常见日期格式（YYYY-MM-DD 或 YYYY/MM/DD）。"""
-        return self.extract_pattern(
-            r"\d{4}[-/]\d{1,2}[-/]\d{1,2}", label="日期"
-        )
-
-    # ── 手动添加 / 修改 ───────────────────────
+        # ── 手动添加 / 修改 ───────────────────────
     def add(
         self,
         start: int,
@@ -154,6 +148,7 @@ class SpanRecord:
         )
         self.spans.append(span)
         return span
+
 
     def update_span(
         self,

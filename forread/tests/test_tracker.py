@@ -11,10 +11,9 @@ def test_span_record():
     print(f"修改前: {span}")
     rec.update_span(0, new_end=span.end + 1)
     print(f"修改后: {span}")
-    
+
     rec2 = SpanRecord(text)
-    rec2.extract_dates()
-    rec2.add(start=0, end=3, label="字段名")   # 手动添加 "订单号"
+    rec2.add(start=10, end=11, label="3")   # 手动添加 "订单号"
     rec2.display()
     
     rec3 = SpanRecord(text)
