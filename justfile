@@ -12,7 +12,7 @@ txt2lines:
     cd tools
     python -c "from txt_to_lines import txt2lines;txt2lines('.tmp/3.txt')"
 pytest:
-    pytest forread/tests
+    pytest --capture=no forread/tests
 
 venv-install:
     echo "venv.... uv pip install inflect pytest pytest-asyncio textual-dev"
