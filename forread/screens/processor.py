@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 from textual.app import ComposeResult
 from textual.screen import Screen
-from textual.widgets import Button, Header, Footer, Static, Label, RadioSet, RadioButton
+from textual.widgets import Button, Header, Footer, Static, Label, RadioSet, RadioButton, Select, SelectionList
 from textual.containers import Container, ScrollableContainer, VerticalScroll, Horizontal, Vertical
 from ..engine import number_to_words
 from ..models import FileSelected
@@ -66,13 +66,21 @@ class FileProcessorScreen(Screen):
                 val, offset = m.group(), m.start()
                 cont = ScrollableContainer(classes="match-item")
                 match_list.mount(cont)
+                targetline = Horizontal(classes="tar-line")
                 cont.mount(
-                    Label(f"Value: [b]{val}[/b]"),
+                    targetline,
                     RadioSet(
                         RadioButton("Number", value=True),
                         RadioButton("Percent"),
                         RadioButton("Year"),
                         id=f"rs-{offset}"
+                    )
+                )
+                targetline.mount(
+                    Label(f"Value: [b]{val}[/b]"),
+                    Select(
+                        (("Falken's Maze", "xcxc"),),
+                        classes="tar-select"
                     )
                 )
 
