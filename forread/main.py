@@ -25,15 +25,11 @@ class ManualProcessorApp(App):
     #right-pane { width: 45%; padding-left: 1; }
     .match-item { background: $boost; border: solid $primary-lighten-2; height: auto; }
     .tar-line { height: 1; }
-    Select {
-        width: 15;
-        padding: 0;
-        margin: 0;
+    SelectCurrent { border: none; height: 1; }
+    SelectCurrent:focus {
+        border: none;
     }
-    Select > .select--label {
-        padding: 0;
-    }
-    .tar-select {  padding:0; margin: 0;  width: 50%; offset: 0 0; box-sizing: content-box; border: none; outline: none; }
+    .tar-select { margin-left: 4; }
     #action-bar { height: 5; align: center middle; border-top: heavy $primary; }
     Button { height: 3;padding:0;margin:0; }
     """
@@ -43,11 +39,6 @@ class ManualProcessorApp(App):
         yield Container(
             Static("Manual Number-to-Word Converter", id="welcome"),
             Button("Open File", variant="primary", id="open-btn"),
-            Select(
-                (("Falken's Maze", "xcxc"),),
-                classes="tar-select"
-            ),
-            Button("xcx", classes="tar-select"),
             id="start-screen"
         )
         yield Footer()
