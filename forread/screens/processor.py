@@ -79,7 +79,7 @@ class FileProcessorScreen(Screen):
                 targetline.mount(
                     Label(f"Value: [b]{val}[/b]"),
                     Select(
-                        (("Falken's Maze", "xcxc"),),
+                        (("Falken's Maze", "sdsdf"),),
                         classes="tar-select"
                     )
                 )
